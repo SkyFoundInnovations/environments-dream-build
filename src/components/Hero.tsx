@@ -1,18 +1,36 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
-import heroVideo from "@/assets/hero-video.mp4";
+import { useRef, useState, useCallback } from "react";
+import heroVideo1 from "@/assets/hero-video-1.mp4";
+import heroVideo2 from "@/assets/hero-video-2.mp4";
+import heroVideo3 from "@/assets/hero-video-3.mp4";
+
+const videos = [heroVideo1, heroVideo2, heroVideo3];
 
 const Hero = () => {
+  const [currentVideo, setCurrentVideo] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleVideoEnd = useCallback(() => {
+    const next = (currentVideo + 1) % videos.length;
+    setCurrentVideo(next);
+    if (videoRef.current) {
+      videoRef.current.src = videos[next];
+      videoRef.current.play();
+    }
+  }, [currentVideo]);
+
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-background via-muted to-secondary overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Video with Overlay */}
       <div className="absolute inset-0">
-        <video 
-          src={heroVideo} 
-          autoPlay 
-          muted 
-          loop 
+        <video
+          ref={videoRef}
+          src={videos[currentVideo]}
+          autoPlay
+          muted
           playsInline
+          onEnded={handleVideoEnd}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60"></div>
