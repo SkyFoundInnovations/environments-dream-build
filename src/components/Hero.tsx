@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 import heroVideo1 from "@/assets/hero-video-1.mp4";
 import heroVideo2 from "@/assets/hero-video-2.mp4";
 import heroVideo3 from "@/assets/hero-video-3.mp4";
@@ -9,29 +9,63 @@ const videos = [heroVideo1, heroVideo2, heroVideo3];
 
 const Hero = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const [nextVideo, setNextVideo] = useState(1);
+  const [transitioning, setTransitioning] = useState(false);
+  const activeRef = useRef<HTMLVideoElement>(null);
+  const nextRef = useRef<HTMLVideoElement>(null);
+
+  // Preload the next video
+  useEffect(() => {
+    setNextVideo((currentVideo + 1) % videos.length);
+  }, [currentVideo]);
 
   const handleVideoEnd = useCallback(() => {
-    const next = (currentVideo + 1) % videos.length;
-    setCurrentVideo(next);
-    if (videoRef.current) {
-      videoRef.current.src = videos[next];
-      videoRef.current.play();
+    // Start crossfade
+    setTransitioning(true);
+    
+    // After fade completes, swap videos
+    setTimeout(() => {
+      setCurrentVideo((prev) => (prev + 1) % videos.length);
+      setTransitioning(false);
+    }, 800);
+  }, []);
+
+  // Auto-play next video when it becomes current
+  useEffect(() => {
+    if (activeRef.current) {
+      activeRef.current.currentTime = 0;
+      activeRef.current.play().catch(() => {});
     }
   }, [currentVideo]);
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-background via-muted to-secondary overflow-hidden">
-      {/* Background Video with Overlay */}
+      {/* Background Videos with Crossfade */}
       <div className="absolute inset-0">
+        {/* Active video */}
         <video
-          ref={videoRef}
+          ref={activeRef}
+          key={`active-${currentVideo}`}
           src={videos[currentVideo]}
           autoPlay
           muted
           playsInline
           onEnded={handleVideoEnd}
-          className="w-full h-full object-cover"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[800ms] ${
+            transitioning ? "opacity-0" : "opacity-100"
+          }`}
+        />
+        {/* Next video (preloaded, fades in) */}
+        <video
+          ref={nextRef}
+          key={`next-${nextVideo}`}
+          src={videos[nextVideo]}
+          muted
+          playsInline
+          preload="auto"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[800ms] ${
+            transitioning ? "opacity-100" : "opacity-0"
+          }`}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60"></div>
       </div>
