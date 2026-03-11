@@ -1,88 +1,86 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Users, Award, Calendar, Shield } from "lucide-react";
+import { Heart, Eye, Handshake } from "lucide-react";
 
 const About = () => {
-  const stats = [
-    { icon: Calendar, number: "25+", label: "Years in Business" },
-    { icon: Users, number: "500+", label: "Happy Clients" },
-    { icon: Award, number: "95%", label: "Projects On Time" },
-    { icon: Shield, number: "100%", label: "Licensed & Insured" },
-  ];
-
   return (
-    <section id="about" className="py-24 bg-background">
+    <section id="about" className="py-24 bg-secondary/50">
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-20 items-start">
           {/* Content */}
           <div>
-            <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">About Us</p>
+            <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">
+              About Me
+            </p>
             <h2 className="font-display text-4xl md:text-5xl text-foreground mb-8 leading-tight">
-              Building Trust Through
-              <span className="block text-primary">Quality Craftsmanship</span>
+              New Business.
+              <span className="block text-primary">Real Experience.</span>
             </h2>
-            
+
             <div className="space-y-5 text-muted-foreground font-body leading-relaxed">
               <p>
-                For over 25 years, Environments has been the trusted choice for homeowners 
-                seeking exceptional construction and remodeling services.
+                I started Environments because building and designing homes is 
+                what I've always been drawn to. It's not just a job — it's something 
+                I genuinely care about.
               </p>
               <p>
-                We believe every home tells a story. Our role is to help you write 
-                the next chapter — whether building from scratch or transforming your 
-                existing space with precision and care.
+                Before starting this company, I spent years working in estimating, 
+                learning the ins and outs of project costs, materials, timelines, 
+                and what it takes to do things right. That background gives me a 
+                clear understanding of what a project actually requires — no 
+                surprises, no guesswork.
+              </p>
+              <p>
+                I've already completed my first full home remodel and I'm ready 
+                to take on more. I may be new as a business, but I'm not new to 
+                the craft. I bring the same level of care and attention to every 
+                project, big or small.
               </p>
             </div>
 
             <div className="mt-8">
               <Button variant="default" size="lg">
-                Learn More About Us
+                Let's Talk About Your Project
               </Button>
             </div>
           </div>
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 gap-5">
-            {stats.map((stat, index) => (
-              <Card key={index} className="text-center p-6 hover:shadow-md transition-all duration-300 border-border">
-                <CardContent className="p-0">
-                  <div className="bg-primary/10 p-3 rounded-lg w-14 h-14 flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="h-7 w-7 text-primary" />
-                  </div>
-                  <div className="text-3xl font-display text-primary mb-1">
-                    {stat.number}
-                  </div>
-                  <div className="text-sm font-medium text-foreground font-body">
-                    {stat.label}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Values */}
-        <div className="mt-24">
-          <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3 text-center">Our Values</p>
-          <h3 className="font-display text-3xl text-foreground mb-12 text-center">What Drives Us</h3>
-          <div className="grid md:grid-cols-3 gap-6">
+          {/* Values */}
+          <div className="space-y-6 lg:pt-16">
             {[
               {
-                title: "Quality First",
-                description: "We never compromise on materials or workmanship, ensuring every project meets our high standards."
+                icon: Heart,
+                title: "Passion for the Craft",
+                description:
+                  "I don't cut corners. Every detail matters — from the framing behind the walls to the trim you see every day.",
               },
               {
-                title: "Transparent Communication",
-                description: "Clear, honest communication keeps you informed every step of the way."
+                icon: Eye,
+                title: "An Eye for Design",
+                description:
+                  "Good design is what turns a house into a home. I help you choose layouts, materials, and finishes that all work together.",
               },
               {
-                title: "Timely Delivery",
-                description: "We respect your time and schedule, delivering projects on time and within budget."
-              }
+                icon: Handshake,
+                title: "Honest & Transparent",
+                description:
+                  "I'll always be upfront about costs, timelines, and what to expect. No sales pitch — just straight talk.",
+              },
             ].map((value, index) => (
-              <div key={index} className="bg-secondary/50 p-8 rounded-lg border border-border">
-                <h4 className="text-lg font-bold text-foreground mb-3 font-body">{value.title}</h4>
-                <p className="text-muted-foreground font-body text-sm leading-relaxed">{value.description}</p>
+              <div
+                key={index}
+                className="bg-card p-8 rounded-lg border border-border flex gap-5"
+              >
+                <div className="bg-primary/10 p-3 rounded-lg w-12 h-12 flex items-center justify-center flex-shrink-0">
+                  <value.icon className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-foreground mb-2 font-body">
+                    {value.title}
+                  </h4>
+                  <p className="text-muted-foreground font-body text-sm leading-relaxed">
+                    {value.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

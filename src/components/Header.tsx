@@ -17,11 +17,11 @@ const Header = () => {
             <a href="#services" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase">
               Services
             </a>
-            <a href="#about" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase">
-              About
-            </a>
             <a href="#portfolio" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase">
               Portfolio
+            </a>
+            <a href="#about" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase">
+              About
             </a>
             <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase">
               Contact
@@ -36,7 +36,7 @@ const Header = () => {
             </div>
             <Button variant="default" size="default">
               <Mail className="h-4 w-4" />
-              Get Quote
+              Free Consultation
             </Button>
           </div>
         </div>
