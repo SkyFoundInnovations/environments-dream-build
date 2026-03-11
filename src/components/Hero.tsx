@@ -26,7 +26,6 @@ const Hero = () => {
                 estimating, driven by a passion for design, and committed to doing 
                 every job with care and integrity.
               </p>
-              </p>
             </div>
 
             {/* CTA */}
