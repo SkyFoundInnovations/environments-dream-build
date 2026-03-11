@@ -26,19 +26,6 @@ const Hero = () => {
               </p>
             </div>
 
-            {/* Stats row */}
-            <div className="flex gap-10 py-6 border-t border-b border-border">
-              {[
-                { num: "25+", label: "Years" },
-                { num: "500+", label: "Projects" },
-                { num: "100%", label: "Licensed" },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <div className="text-3xl font-display text-primary">{stat.num}</div>
-                  <div className="text-sm text-muted-foreground font-body">{stat.label}</div>
-                </div>
-              ))}
-            </div>
 
             {/* CTA */}
             <div className="flex flex-col sm:flex-row gap-4">
