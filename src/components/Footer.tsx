@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 py-16">
           {/* Logo & Info */}
           <div>
-            <img src={logo} alt="Environments" className="h-14 w-auto brightness-0 invert mb-6" />
+            <img src={logo} alt="Environments" className="h-14 w-auto mb-6" />
             <p className="text-background/80 leading-relaxed mb-6 font-body text-sm">
               A business built on real experience — redesigning, restructuring, 
               and reconnecting homes with care and craftsmanship.
