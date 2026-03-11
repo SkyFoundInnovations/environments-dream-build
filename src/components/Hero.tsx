@@ -1,128 +1,77 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle } from "lucide-react";
-import { useRef, useState, useCallback, useEffect } from "react";
-import heroVideo1 from "@/assets/hero-video-1.mp4";
-import heroVideo2 from "@/assets/hero-video-2.mp4";
-import heroVideo3 from "@/assets/hero-video-3.mp4";
-
-const videos = [heroVideo1, heroVideo2, heroVideo3];
+import { ArrowRight } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Hero = () => {
-  const [currentVideo, setCurrentVideo] = useState(0);
-  const [nextVideo, setNextVideo] = useState(1);
-  const [transitioning, setTransitioning] = useState(false);
-  const activeRef = useRef<HTMLVideoElement>(null);
-  const nextRef = useRef<HTMLVideoElement>(null);
-
-  // Preload the next video
-  useEffect(() => {
-    setNextVideo((currentVideo + 1) % videos.length);
-  }, [currentVideo]);
-
-  const handleVideoEnd = useCallback(() => {
-    // Start crossfade
-    setTransitioning(true);
-    
-    // After fade completes, swap videos
-    setTimeout(() => {
-      setCurrentVideo((prev) => (prev + 1) % videos.length);
-      setTransitioning(false);
-    }, 800);
-  }, []);
-
-  // Auto-play next video when it becomes current
-  useEffect(() => {
-    if (activeRef.current) {
-      activeRef.current.currentTime = 0;
-      activeRef.current.play().catch(() => {});
-    }
-  }, [currentVideo]);
-
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-background via-muted to-secondary overflow-hidden">
-      {/* Background Videos with Crossfade */}
-      <div className="absolute inset-0">
-        {/* Active video */}
-        <video
-          ref={activeRef}
-          key={`active-${currentVideo}`}
-          src={videos[currentVideo]}
-          autoPlay
-          muted
-          playsInline
-          onEnded={handleVideoEnd}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[800ms] ${
-            transitioning ? "opacity-0" : "opacity-100"
-          }`}
-        />
-        {/* Next video (preloaded, fades in) */}
-        <video
-          ref={nextRef}
-          key={`next-${nextVideo}`}
-          src={videos[nextVideo]}
-          muted
-          playsInline
-          preload="auto"
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[800ms] ${
-            transitioning ? "opacity-100" : "opacity-0"
-          }`}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60"></div>
-      </div>
+    <section className="relative min-h-screen flex items-center bg-background overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23456' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+      }} />
+
+      {/* Decorative green accent */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/[0.04] -skew-x-12 translate-x-20" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex items-center min-h-screen">
-          <div className="max-w-2xl py-20">
-            {/* Trust Badge */}
-            <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-8">
-              <CheckCircle className="h-4 w-4 mr-2" />
-              Licensed & Insured Since 1995
+        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-screen py-24">
+          {/* Left content */}
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-foreground leading-[1.1] tracking-tight">
+                We Build
+                <span className="block text-primary">Environments</span>
+                That Last
+              </h1>
+
+              <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
+                Redesign · Restructure · Reconnect — transforming spaces with 
+                over 25 years of expert craftsmanship and thoughtful design.
+              </p>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6">
-              Transform Your
-              <span className="block text-primary">Home Vision</span>
-              Into Reality
-            </h1>
-
-            {/* Subheadline */}
-            <p className="text-xl text-muted-foreground leading-relaxed mb-8 max-w-lg">
-              Expert craftsmanship meets innovative design. We specialize in complete home remodeling 
-              and custom construction that exceeds expectations.
-            </p>
-
-            {/* Key Benefits */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            {/* Stats row */}
+            <div className="flex gap-10 py-6 border-t border-b border-border">
               {[
-                "25+ Years Experience",
-                "Licensed Professionals",
-                "Quality Guaranteed", 
-                "On-Time Completion"
-              ].map((benefit) => (
-                <div key={benefit} className="flex items-center text-muted-foreground">
-                  <CheckCircle className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
-                  <span className="font-medium">{benefit}</span>
+                { num: "25+", label: "Years" },
+                { num: "500+", label: "Projects" },
+                { num: "100%", label: "Licensed" },
+              ].map((stat) => (
+                <div key={stat.label}>
+                  <div className="text-3xl font-display text-primary">{stat.num}</div>
+                  <div className="text-sm text-muted-foreground font-body">{stat.label}</div>
                 </div>
               ))}
             </div>
 
-            {/* CTA Buttons */}
+            {/* CTA */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="lg" className="text-lg px-8">
+              <Button variant="hero" size="lg" className="text-base px-8">
                 Start Your Project
                 <ArrowRight className="h-5 w-5" />
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8">
+              <Button variant="outline" size="lg" className="text-base px-8">
                 View Our Work
               </Button>
+            </div>
+          </div>
+
+          {/* Right side — large logo mark */}
+          <div className="hidden lg:flex items-center justify-center">
+            <div className="relative">
+              <div className="absolute inset-0 bg-primary/5 rounded-full blur-3xl scale-150" />
+              <img 
+                src={logo} 
+                alt="Environments — Redesign, Restructure, Reconnect" 
+                className="relative w-[420px] h-auto opacity-90"
+              />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background/80 to-transparent"></div>
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 };

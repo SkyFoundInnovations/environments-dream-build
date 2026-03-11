@@ -1,43 +1,40 @@
 import { Button } from "@/components/ui/button";
-import { Home, Phone, Mail } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   return (
     <header className="bg-card/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <Home className="h-8 w-8 text-primary" />
-            <div>
-              <h1 className="text-2xl font-bold text-foreground">Environments</h1>
-              <p className="text-xs text-muted-foreground">Building Excellence</p>
-            </div>
-          </div>
+          <a href="/" className="flex items-center">
+            <img src={logo} alt="Environments" className="h-12 w-auto" />
+          </a>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-foreground hover:text-primary transition-colors font-medium">
+            <a href="#services" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase">
               Services
             </a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors font-medium">
+            <a href="#about" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase">
               About
             </a>
-            <a href="#portfolio" className="text-foreground hover:text-primary transition-colors font-medium">
+            <a href="#portfolio" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase">
               Portfolio
             </a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors font-medium">
+            <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase">
               Contact
             </a>
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA */}
           <div className="flex items-center space-x-4">
             <div className="hidden sm:flex items-center space-x-2 text-sm text-muted-foreground">
               <Phone className="h-4 w-4" />
               <span>(555) 123-4567</span>
             </div>
-            <Button variant="hero" size="lg">
+            <Button variant="default" size="default">
               <Mail className="h-4 w-4" />
               Get Quote
             </Button>

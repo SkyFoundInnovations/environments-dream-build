@@ -6,74 +6,53 @@ import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-background to-muted/30">
+    <section id="contact" className="py-24 bg-secondary/50">
       <div className="container mx-auto px-6">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+        <div className="max-w-2xl mb-16">
+          <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">Get In Touch</p>
+          <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
             Let's Start Your Project
           </h2>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            Ready to transform your home? Contact us today for a free consultation 
-            and detailed project quote.
+          <p className="text-lg text-muted-foreground leading-relaxed font-body">
+            Ready to transform your home? Contact us for a free consultation and detailed quote.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Contact Form */}
-          <Card className="bg-gradient-to-b from-card to-card/80">
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Form */}
+          <Card className="border-border">
             <CardHeader>
-              <CardTitle className="text-2xl font-bold text-foreground">
+              <CardTitle className="text-xl font-bold text-foreground font-body">
                 Get Your Free Quote
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-5">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    First Name
-                  </label>
+                  <label className="block text-sm font-medium text-foreground mb-2 font-body">First Name</label>
                   <Input placeholder="John" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Last Name
-                  </label>
+                  <label className="block text-sm font-medium text-foreground mb-2 font-body">Last Name</label>
                   <Input placeholder="Smith" />
                 </div>
               </div>
-              
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Email Address
-                </label>
+                <label className="block text-sm font-medium text-foreground mb-2 font-body">Email</label>
                 <Input type="email" placeholder="john@example.com" />
               </div>
-              
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Phone Number
-                </label>
+                <label className="block text-sm font-medium text-foreground mb-2 font-body">Phone</label>
                 <Input type="tel" placeholder="(555) 123-4567" />
               </div>
-              
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Project Type
-                </label>
+                <label className="block text-sm font-medium text-foreground mb-2 font-body">Project Type</label>
                 <Input placeholder="Kitchen Remodel, New Construction, etc." />
               </div>
-              
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Project Details
-                </label>
-                <Textarea 
-                  placeholder="Tell us about your project, timeline, and any specific requirements..."
-                  rows={4}
-                />
+                <label className="block text-sm font-medium text-foreground mb-2 font-body">Details</label>
+                <Textarea placeholder="Tell us about your project..." rows={4} />
               </div>
-              
               <Button variant="hero" size="lg" className="w-full">
                 <Send className="h-5 w-5" />
                 Send Message
@@ -81,69 +60,35 @@ const Contact = () => {
             </CardContent>
           </Card>
 
-          {/* Contact Information */}
-          <div className="space-y-8">
-            {/* Contact Cards */}
-            <div className="grid gap-6">
-              {[
-                {
-                  icon: Phone,
-                  title: "Call Us",
-                  details: "(555) 123-4567",
-                  description: "Mon-Fri 7AM-6PM, Sat 8AM-4PM"
-                },
-                {
-                  icon: Mail,
-                  title: "Email Us",
-                  details: "info@environments.com",
-                  description: "We'll respond within 24 hours"
-                },
-                {
-                  icon: MapPin,
-                  title: "Visit Our Office",
-                  details: "123 Construction Way, Builder City, BC 12345",
-                  description: "Schedule an appointment"
-                },
-                {
-                  icon: Clock,
-                  title: "Business Hours",
-                  details: "Monday - Friday: 7:00 AM - 6:00 PM",
-                  description: "Saturday: 8:00 AM - 4:00 PM"
-                }
-              ].map((contact, index) => (
-                <Card key={index} className="bg-gradient-to-b from-card to-card/80 hover:shadow-lg transition-all duration-300">
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="bg-primary/10 p-3 rounded-full">
-                        <contact.icon className="h-6 w-6 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-foreground mb-1">
-                          {contact.title}
-                        </h3>
-                        <p className="text-foreground font-medium mb-1">
-                          {contact.details}
-                        </p>
-                        <p className="text-sm text-muted-foreground">
-                          {contact.description}
-                        </p>
-                      </div>
+          {/* Contact Info */}
+          <div className="space-y-5">
+            {[
+              { icon: Phone, title: "Call Us", details: "(555) 123-4567", sub: "Mon-Fri 7AM-6PM" },
+              { icon: Mail, title: "Email Us", details: "info@environments.com", sub: "We respond within 24 hours" },
+              { icon: MapPin, title: "Visit Us", details: "123 Construction Way, Builder City", sub: "By appointment" },
+              { icon: Clock, title: "Hours", details: "Mon-Fri: 7AM-6PM", sub: "Sat: 8AM-4PM" },
+            ].map((c, i) => (
+              <Card key={i} className="border-border hover:shadow-md transition-all duration-300">
+                <CardContent className="p-5">
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-primary/10 p-2.5 rounded-lg">
+                      <c.icon className="h-5 w-5 text-primary" />
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+                    <div>
+                      <h3 className="font-bold text-foreground text-sm font-body">{c.title}</h3>
+                      <p className="text-foreground font-medium text-sm font-body">{c.details}</p>
+                      <p className="text-xs text-muted-foreground font-body">{c.sub}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
 
-            {/* Emergency Contact */}
-            <Card className="bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20">
+            <Card className="bg-primary/5 border-primary/15">
               <CardContent className="p-6 text-center">
-                <h3 className="text-xl font-bold text-foreground mb-2">
-                  Emergency Services Available
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  24/7 emergency repairs and urgent construction needs
-                </p>
-                <Button variant="professional" size="lg">
+                <h3 className="text-lg font-bold text-foreground mb-2 font-body">Emergency Services</h3>
+                <p className="text-sm text-muted-foreground mb-4 font-body">24/7 emergency repairs available</p>
+                <Button variant="default" size="lg">
                   <Phone className="h-5 w-5" />
                   Call Emergency Line
                 </Button>

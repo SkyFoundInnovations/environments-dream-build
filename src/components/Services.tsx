@@ -31,39 +31,40 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-gradient-to-b from-background to-muted/30">
+    <section id="services" className="py-24 bg-secondary/50">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+        <div className="max-w-2xl mb-16">
+          <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">What We Do</p>
+          <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
             Our Professional Services
           </h2>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            From custom builds to complete renovations, we offer comprehensive construction 
-            and remodeling services backed by decades of experience.
+          <p className="text-lg text-muted-foreground leading-relaxed font-body">
+            From custom builds to complete renovations, we deliver comprehensive 
+            construction and remodeling services with precision.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {services.map((service, index) => (
-            <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-border bg-gradient-to-b from-card to-card/80">
-              <CardHeader className="text-center pb-4">
-                <div className="mx-auto bg-primary/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <service.icon className="h-8 w-8 text-primary" />
+            <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-border bg-card">
+              <CardHeader className="pb-4">
+                <div className="bg-primary/10 p-3 rounded-lg w-12 h-12 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                  <service.icon className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl font-bold text-foreground">
+                <CardTitle className="text-lg font-bold text-foreground font-body">
                   {service.title}
                 </CardTitle>
-                <CardDescription className="text-muted-foreground">
+                <CardDescription className="text-muted-foreground font-body">
                   {service.description}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
-                      <ArrowRight className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
+                    <li key={featureIndex} className="flex items-center text-sm text-muted-foreground font-body">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mr-3 flex-shrink-0" />
                       {feature}
                     </li>
                   ))}
@@ -73,12 +74,12 @@ const Services = () => {
           ))}
         </div>
 
-        {/* CTA Section */}
-        <div className="text-center bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 rounded-2xl p-12">
-          <h3 className="text-3xl font-bold text-foreground mb-4">
+        {/* CTA */}
+        <div className="text-center bg-primary/5 border border-primary/10 rounded-2xl p-12">
+          <h3 className="font-display text-3xl text-foreground mb-4">
             Ready to Start Your Project?
           </h3>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto font-body">
             Get a free consultation and detailed quote for your construction or remodeling project.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
