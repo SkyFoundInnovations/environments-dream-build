@@ -22,9 +22,10 @@ const Hero = () => {
               </h1>
 
               <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
-                Environments is a new business built on real experience — 
-                rooted in estimating, driven by a passion for design, and 
-                committed to doing every job with care and integrity.
+                Environments is a business built on real experience — rooted in 
+                estimating, driven by a passion for design, and committed to doing 
+                every job with care and integrity.
+              </p>
               </p>
             </div>
 
