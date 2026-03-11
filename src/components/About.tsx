@@ -12,7 +12,7 @@ const About = () => {
               About Me
             </p>
             <h2 className="font-display text-4xl md:text-5xl text-foreground mb-8 leading-tight">
-              New Business.
+              Built on
               <span className="block text-primary">Real Experience.</span>
             </h2>
 
