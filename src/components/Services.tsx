@@ -1,5 +1,6 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Home, Wrench, Bath, PlusSquare, Paintbrush } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Services = () => {
   const services = [
@@ -35,11 +36,33 @@ const Services = () => {
     },
   ];
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.12 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
+    },
+  };
+
   return (
     <section id="services" className="py-24 bg-secondary/50">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="max-w-2xl mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-2xl mb-16"
+        >
           <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">
             What We Do
           </p>
@@ -50,29 +73,43 @@ const Services = () => {
             Every project gets our full attention — from the first conversation to 
             the final walkthrough. Here's how we can help.
           </p>
-        </div>
+        </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {services.map((service, index) => (
-            <Card
-              key={index}
-              className="group hover:shadow-lg transition-all duration-300 border-border bg-card"
-            >
-              <CardHeader className="pb-4">
-                <div className="bg-primary/10 p-3 rounded-lg w-12 h-12 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <service.icon className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle className="text-lg font-bold text-foreground font-body">
-                  {service.title}
-                </CardTitle>
-                <CardDescription className="text-muted-foreground font-body leading-relaxed">
-                  {service.description}
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <motion.div key={index} variants={itemVariants}>
+              <motion.div
+                whileHover={{ y: -6, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                <Card className="group hover:shadow-lg transition-shadow duration-300 border-border bg-card h-full">
+                  <CardHeader className="pb-4">
+                    <motion.div
+                      whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
+                      transition={{ duration: 0.5 }}
+                      className="bg-primary/10 p-3 rounded-lg w-12 h-12 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors"
+                    >
+                      <service.icon className="h-6 w-6 text-primary" />
+                    </motion.div>
+                    <CardTitle className="text-lg font-bold text-foreground font-body">
+                      {service.title}
+                    </CardTitle>
+                    <CardDescription className="text-muted-foreground font-body leading-relaxed">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </motion.div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
