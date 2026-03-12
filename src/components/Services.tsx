@@ -41,14 +41,14 @@ const Services = () => {
         {/* Section Header */}
         <div className="max-w-2xl mb-16">
           <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">
-            What I Do
+            What We Do
           </p>
           <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
             Services
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed font-body">
-            Every project gets my full attention — from the first conversation to 
-            the final walkthrough. Here's how I can help.
+            Every project gets our full attention — from the first conversation to 
+            the final walkthrough. Here's how we can help.
           </p>
         </div>
 

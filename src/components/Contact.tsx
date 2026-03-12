@@ -131,7 +131,7 @@ const Contact = () => {
                 Free Consultations
               </h4>
               <p className="text-sm text-muted-foreground font-body leading-relaxed">
-                Not sure where to start? That's okay. I'll come take a look, 
+                Not sure where to start? That's okay. We'll come take a look, 
                 listen to your ideas, and give you an honest assessment — no 
                 obligation.
               </p>
