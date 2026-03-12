@@ -7,31 +7,31 @@ const Services = () => {
       icon: Home,
       title: "Custom Home Building",
       description:
-        "From the ground up, I'll work with you to plan and build a home that fits your life — designed thoughtfully and built with quality materials.",
+        "From the ground up, we work with you to plan and build a home that fits your life — designed thoughtfully and built with quality materials.",
     },
     {
       icon: Wrench,
       title: "Kitchen Remodeling",
       description:
-        "The kitchen is the heart of the home. I'll help you reimagine the layout, finishes, and flow to create a space you actually enjoy using.",
+        "The kitchen is the heart of the home. Our team helps you reimagine the layout, finishes, and flow to create a space you actually enjoy using.",
     },
     {
       icon: Bath,
       title: "Bathroom Renovation",
       description:
-        "Whether it's a simple refresh or a full gut renovation, I bring an eye for design and attention to the details that matter most.",
+        "Whether it's a simple refresh or a full gut renovation, we bring an eye for design and attention to the details that matter most.",
     },
     {
       icon: PlusSquare,
       title: "Room Additions",
       description:
-        "Need more space? I'll help you expand your home seamlessly — matching the existing structure and adding real value.",
+        "Need more space? We help you expand your home seamlessly — matching the existing structure and adding real value.",
     },
     {
       icon: Paintbrush,
       title: "Interior Design",
       description:
-        "Good design isn't just about looks — it's about how a space feels. I'll help you choose materials, colors, and layouts that work together.",
+        "Good design isn't just about looks — it's about how a space feels. We help you choose materials, colors, and layouts that work together.",
     },
   ];
 
@@ -41,14 +41,14 @@ const Services = () => {
         {/* Section Header */}
         <div className="max-w-2xl mb-16">
           <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">
-            What I Do
+            What We Do
           </p>
           <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
             Services
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed font-body">
-            Every project gets my full attention — from the first conversation to 
-            the final walkthrough. Here's how I can help.
+            Every project gets our full attention — from the first conversation to 
+            the final walkthrough. Here's how we can help.
           </p>
         </div>
 

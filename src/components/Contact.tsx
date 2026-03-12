@@ -16,7 +16,7 @@ const Contact = () => {
             Let's Talk About Your Project
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed font-body">
-            Have an idea for your home? I'd love to hear about it. Reach out for a 
+            Have an idea for your home? We'd love to hear about it. Reach out for a 
             free consultation — no pressure, just a conversation.
           </p>
         </div>
@@ -26,7 +26,7 @@ const Contact = () => {
           <Card className="border-border">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-foreground font-body">
-                Send Me a Message
+                Send Us a Message
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-5">
@@ -64,7 +64,7 @@ const Contact = () => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2 font-body">
-                  Tell me about your project
+                  Tell us about your project
                 </label>
                 <Textarea
                   placeholder="Share any details — budget range, timeline, inspiration..."
@@ -85,8 +85,8 @@ const Contact = () => {
                 Prefer to talk?
               </h3>
               <p className="text-muted-foreground font-body leading-relaxed mb-8">
-                I'm always happy to chat over the phone. Give me a call or send a 
-                text and I'll get back to you as soon as I can.
+                Our team is always happy to chat over the phone. Give us a call or send a 
+                text and we'll get back to you as soon as possible.
               </p>
             </div>
 
@@ -131,7 +131,7 @@ const Contact = () => {
                 Free Consultations
               </h4>
               <p className="text-sm text-muted-foreground font-body leading-relaxed">
-                Not sure where to start? That's okay. I'll come take a look, 
+                Not sure where to start? That's okay. We'll come take a look, 
                 listen to your ideas, and give you an honest assessment — no 
                 obligation.
               </p>

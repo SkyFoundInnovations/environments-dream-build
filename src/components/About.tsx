@@ -9,7 +9,7 @@ const About = () => {
           {/* Content */}
           <div>
             <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">
-              About Me
+              About Us
             </p>
             <h2 className="font-display text-4xl md:text-5xl text-foreground mb-8 leading-tight">
               Built on
@@ -18,22 +18,20 @@ const About = () => {
 
             <div className="space-y-5 text-muted-foreground font-body leading-relaxed">
               <p>
-                I started Environments because building and designing homes is 
-                what I've always been drawn to. It's not just a job — it's something 
-                I genuinely care about.
+                Environments was founded on a genuine passion for building and 
+                designing homes. It's more than a business — it's a commitment 
+                to creating spaces that people love to live in.
               </p>
               <p>
-                Before starting this company, I spent years working in estimating, 
-                learning the ins and outs of project costs, materials, timelines, 
-                and what it takes to do things right. That background gives me a 
-                clear understanding of what a project actually requires — no 
-                surprises, no guesswork.
+                With years of hands-on experience in construction estimating, 
+                our team brings deep knowledge of project costs, materials, 
+                timelines, and execution. That expertise ensures every project 
+                is planned with precision — no surprises, no guesswork.
               </p>
               <p>
-                I've already completed my first full home remodel and I'm ready 
-                to take on more. I may be new as a business, but I'm not new to 
-                the craft. I bring the same level of care and attention to every 
-                project, big or small.
+                From full home remodels to targeted renovations, Environments 
+                delivers the same level of care, craftsmanship, and attention 
+                to detail on every project, regardless of size or scope.
               </p>
             </div>
 
@@ -51,19 +49,19 @@ const About = () => {
                 icon: Heart,
                 title: "Passion for the Craft",
                 description:
-                  "I don't cut corners. Every detail matters — from the framing behind the walls to the trim you see every day.",
+                  "No corners cut. Every detail matters — from the framing behind the walls to the trim you see every day.",
               },
               {
                 icon: Eye,
                 title: "An Eye for Design",
                 description:
-                  "Good design is what turns a house into a home. I help you choose layouts, materials, and finishes that all work together.",
+                  "Good design is what turns a house into a home. Our team helps you choose layouts, materials, and finishes that all work together.",
               },
               {
                 icon: Handshake,
                 title: "Honest & Transparent",
                 description:
-                  "I'll always be upfront about costs, timelines, and what to expect. No sales pitch — just straight talk.",
+                  "We're always upfront about costs, timelines, and what to expect. No sales pitch — just straight talk.",
               },
             ].map((value, index) => (
               <div
