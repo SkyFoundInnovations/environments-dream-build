@@ -85,8 +85,8 @@ const Contact = () => {
                 Prefer to talk?
               </h3>
               <p className="text-muted-foreground font-body leading-relaxed mb-8">
-                I'm always happy to chat over the phone. Give me a call or send a 
-                text and I'll get back to you as soon as I can.
+                Our team is always happy to chat over the phone. Give us a call or send a 
+                text and we'll get back to you as soon as possible.
               </p>
             </div>
 
