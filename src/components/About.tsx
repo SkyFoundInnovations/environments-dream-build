@@ -49,19 +49,19 @@ const About = () => {
                 icon: Heart,
                 title: "Passion for the Craft",
                 description:
-                  "I don't cut corners. Every detail matters — from the framing behind the walls to the trim you see every day.",
+                  "No corners cut. Every detail matters — from the framing behind the walls to the trim you see every day.",
               },
               {
                 icon: Eye,
                 title: "An Eye for Design",
                 description:
-                  "Good design is what turns a house into a home. I help you choose layouts, materials, and finishes that all work together.",
+                  "Good design is what turns a house into a home. Our team helps you choose layouts, materials, and finishes that all work together.",
               },
               {
                 icon: Handshake,
                 title: "Honest & Transparent",
                 description:
-                  "I'll always be upfront about costs, timelines, and what to expect. No sales pitch — just straight talk.",
+                  "We're always upfront about costs, timelines, and what to expect. No sales pitch — just straight talk.",
               },
             ].map((value, index) => (
               <div
