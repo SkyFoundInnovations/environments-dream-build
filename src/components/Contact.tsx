@@ -16,7 +16,7 @@ const Contact = () => {
             Let's Talk About Your Project
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed font-body">
-            Have an idea for your home? I'd love to hear about it. Reach out for a 
+            Have an idea for your home? We'd love to hear about it. Reach out for a 
             free consultation — no pressure, just a conversation.
           </p>
         </div>
