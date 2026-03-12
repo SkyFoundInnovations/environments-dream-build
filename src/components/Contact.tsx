@@ -64,7 +64,7 @@ const Contact = () => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2 font-body">
-                  Tell me about your project
+                  Tell us about your project
                 </label>
                 <Textarea
                   placeholder="Share any details — budget range, timeline, inspiration..."
