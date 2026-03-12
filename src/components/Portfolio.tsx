@@ -1,12 +1,13 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { ImageIcon } from "lucide-react";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 
 const Portfolio = () => {
-  // Placeholder slots — replace with real photos when uploaded
-  const projectPhotos = [
-    { id: 1, label: "Before", src: null },
-    { id: 2, label: "During", src: null },
-    { id: 3, label: "After", src: null },
+  const comparisons = [
+    { id: 1, title: "Kitchen Remodel", before: null, after: null },
+    { id: 2, title: "Bathroom Renovation", before: null, after: null },
+    { id: 3, title: "Living Room Redesign", before: null, after: null },
+    { id: 4, title: "Basement Finishing", before: null, after: null },
+    { id: 5, title: "Exterior Update", before: null, after: null },
+    { id: 6, title: "Master Suite", before: null, after: null },
   ];
 
   return (
@@ -18,48 +19,25 @@ const Portfolio = () => {
             My Work
           </p>
           <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
-            First Project — Full Home Remodel
+            Before & After
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed font-body">
-            This was my first project as Environments — a complete home remodel 
-            from start to finish. Every detail was handled with care, from 
-            structural changes to the final finishes. Photos coming soon.
+            Drag the slider to see the transformation. Every project is handled 
+            with care, from structural changes to the final finishes.
           </p>
         </div>
 
-        {/* Photo Grid — placeholders for now */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {projectPhotos.map((photo) => (
-            <Card key={photo.id} className="overflow-hidden border-border">
-              <CardContent className="p-0">
-                {photo.src ? (
-                  <img
-                    src={photo.src}
-                    alt={photo.label}
-                    className="w-full h-72 object-cover"
-                  />
-                ) : (
-                  <div className="w-full h-72 bg-muted flex flex-col items-center justify-center gap-3">
-                    <ImageIcon className="h-10 w-10 text-muted-foreground/40" />
-                    <span className="text-sm text-muted-foreground font-body">
-                      {photo.label} — Photo coming soon
-                    </span>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
+        {/* Comparison Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {comparisons.map((item) => (
+            <div key={item.id} className="space-y-3">
+              <BeforeAfterSlider
+                beforeSrc={item.before}
+                afterSrc={item.after}
+              />
+              <h3 className="font-display text-lg text-foreground">{item.title}</h3>
+            </div>
           ))}
-        </div>
-
-        {/* More projects note */}
-        <div className="text-center bg-primary/5 border border-primary/10 rounded-2xl p-10">
-          <h3 className="font-display text-2xl text-foreground mb-3">
-            More Projects on the Way
-          </h3>
-          <p className="text-muted-foreground font-body max-w-xl mx-auto">
-            Every new project will be documented here. I'm just getting started, 
-            and I plan to let the work speak for itself.
-          </p>
         </div>
       </div>
     </section>
