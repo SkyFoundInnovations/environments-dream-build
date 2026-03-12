@@ -26,7 +26,7 @@ const Contact = () => {
           <Card className="border-border">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-foreground font-body">
-                Send Me a Message
+                Send Us a Message
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-5">
