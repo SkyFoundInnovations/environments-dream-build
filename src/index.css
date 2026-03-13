@@ -41,6 +41,15 @@
     --construction-dark: 155 30% 18%;
     --construction-light: 150 15% 95%;
 
+    /* Warm accent — amber/gold pop */
+    --warm-accent: 38 92% 50%;
+    --warm-accent-foreground: 38 95% 15%;
+
+    /* Dark section variant */
+    --section-dark: 155 30% 12%;
+    --section-dark-foreground: 150 15% 92%;
+    --section-dark-muted: 150 10% 60%;
+
     /* Shadows */
     --shadow-card: 0 4px 20px hsl(155 20% 15% / 0.06);
     --shadow-hero: 0 10px 40px hsl(155 32% 32% / 0.12);
