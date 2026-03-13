@@ -129,7 +129,7 @@ const Contact = () => {
                         Call or Text
                       </h4>
                       <p className="text-section-dark-foreground font-medium text-sm font-body">
-                        513 848 9034
+                        513 836 7134
                       </p>
                     </div>
                   </div>
