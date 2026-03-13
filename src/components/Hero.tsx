@@ -78,7 +78,7 @@ const Hero = () => {
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
-                <Button variant="outline" size="lg" className="text-base px-8 border-white/30 text-white hover:bg-white/10">
+                <Button variant="outline" size="lg" className="text-base px-8 border-white/30 text-white hover:bg-white/10 bg-transparent">
                   See Our Work
                 </Button>
               </motion.div>
