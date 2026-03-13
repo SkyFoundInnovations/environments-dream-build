@@ -25,8 +25,12 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-secondary/50">
-      <div className="container mx-auto px-6">
+    <section id="about" className="py-24 bg-section-dark relative overflow-hidden">
+      {/* Accent glow */}
+      <div className="absolute top-1/2 left-0 w-80 h-80 bg-primary/10 blur-[100px] rounded-full -translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-warm/8 blur-[80px] rounded-full translate-x-1/3" />
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-20 items-start">
           {/* Content */}
           <motion.div
@@ -35,15 +39,15 @@ const About = () => {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">
+            <p className="text-sm uppercase tracking-widest text-warm font-medium mb-3">
               About Us
             </p>
-            <h2 className="font-display text-4xl md:text-5xl text-foreground mb-8 leading-tight">
+            <h2 className="font-display text-4xl md:text-5xl text-section-dark-foreground mb-8 leading-tight">
               Built on
-              <span className="block text-primary">Real Experience.</span>
+              <span className="block text-warm">Real Experience.</span>
             </h2>
 
-            <div className="space-y-5 text-muted-foreground font-body leading-relaxed">
+            <div className="space-y-5 text-section-dark-muted font-body leading-relaxed">
               <p>
                 Environments was founded on a genuine passion for building and 
                 designing homes. It's more than a business — it's a commitment 
@@ -67,7 +71,7 @@ const About = () => {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
-              <Button variant="default" size="lg">
+              <Button variant="hero" size="lg" className="bg-warm text-warm-foreground hover:bg-warm/90 shadow-lg shadow-warm/20">
                 Let's Talk About Your Project
               </Button>
             </motion.div>
@@ -90,20 +94,20 @@ const About = () => {
                 <motion.div
                   whileHover={{ x: 6, scale: 1.01 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="bg-card p-8 rounded-lg border border-border flex gap-5"
+                  className="bg-section-dark-foreground/5 backdrop-blur-sm p-8 rounded-lg border border-section-dark-foreground/10 flex gap-5 hover:border-warm/30 transition-colors"
                 >
                   <motion.div
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}
-                    className="bg-primary/10 p-3 rounded-lg w-12 h-12 flex items-center justify-center flex-shrink-0"
+                    className="bg-warm/15 p-3 rounded-lg w-12 h-12 flex items-center justify-center flex-shrink-0"
                   >
-                    <value.icon className="h-6 w-6 text-primary" />
+                    <value.icon className="h-6 w-6 text-warm" />
                   </motion.div>
                   <div>
-                    <h4 className="text-lg font-bold text-foreground mb-2 font-body">
+                    <h4 className="text-lg font-bold text-section-dark-foreground mb-2 font-body">
                       {value.title}
                     </h4>
-                    <p className="text-muted-foreground font-body text-sm leading-relaxed">
+                    <p className="text-section-dark-muted font-body text-sm leading-relaxed">
                       {value.description}
                     </p>
                   </div>

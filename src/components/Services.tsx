@@ -53,8 +53,11 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-24 bg-secondary/50">
-      <div className="container mx-auto px-6">
+    <section id="services" className="py-24 bg-background relative overflow-hidden">
+      {/* Subtle warm accent glow */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-warm/5 blur-[100px] rounded-full -translate-y-1/2" />
+
+      <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -63,7 +66,7 @@ const Services = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-2xl mb-16"
         >
-          <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">
+          <p className="text-sm uppercase tracking-widest text-warm font-medium mb-3">
             What We Do
           </p>
           <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
@@ -89,14 +92,14 @@ const Services = () => {
                 whileHover={{ y: -6, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <Card className="group hover:shadow-lg transition-shadow duration-300 border-border bg-card h-full">
+                <Card className="group hover:shadow-lg transition-shadow duration-300 border-border bg-card h-full hover:border-warm/30">
                   <CardHeader className="pb-4">
                     <motion.div
                       whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
                       transition={{ duration: 0.5 }}
-                      className="bg-primary/10 p-3 rounded-lg w-12 h-12 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors"
+                      className="bg-warm/10 p-3 rounded-lg w-12 h-12 flex items-center justify-center mb-4 group-hover:bg-warm/20 transition-colors"
                     >
-                      <service.icon className="h-6 w-6 text-primary" />
+                      <service.icon className="h-6 w-6 text-warm" />
                     </motion.div>
                     <CardTitle className="text-lg font-bold text-foreground font-body">
                       {service.title}
