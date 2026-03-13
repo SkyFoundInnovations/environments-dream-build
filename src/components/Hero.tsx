@@ -1,24 +1,37 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
-import logo from "@/assets/logo.png";
+import heroVideo from "@/assets/hero-video.mp4";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center bg-background overflow-hidden">
-      {/* Subtle diagonal accent */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/[0.03] -skew-x-12 translate-x-20" />
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Fullscreen video background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        {/* Dark overlay with green tint */}
+        <div className="absolute inset-0 bg-gradient-to-r from-section-dark/95 via-section-dark/80 to-section-dark/50" />
+        {/* Warm accent glow — bottom corner */}
+        <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-warm/10 blur-[120px] rounded-full" />
+      </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-screen py-24">
-          {/* Left content */}
+        <div className="max-w-3xl py-24">
           <div className="space-y-8">
             <div className="space-y-6">
               <motion.p
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-sm uppercase tracking-widest text-primary font-medium font-body"
+                className="text-sm uppercase tracking-widest text-warm font-medium font-body"
               >
                 Redesign · Restructure · Reconnect
               </motion.p>
@@ -26,14 +39,14 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="font-display text-5xl md:text-6xl lg:text-7xl text-foreground leading-[1.1] tracking-tight"
+                className="font-display text-5xl md:text-6xl lg:text-7xl text-white leading-[1.1] tracking-tight"
               >
                 Your Home,
                 <motion.span
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                  className="block text-primary"
+                  className="block text-warm"
                 >
                   Done Right.
                 </motion.span>
@@ -43,7 +56,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg"
+                className="font-body text-lg md:text-xl text-section-dark-foreground/80 leading-relaxed max-w-lg"
               >
                 Environments is a business built on real experience — rooted in 
                 estimating, driven by a passion for design, and committed to doing 
@@ -59,41 +72,18 @@ const Hero = () => {
               className="flex flex-col sm:flex-row gap-4"
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
-                <Button variant="hero" size="lg" className="text-base px-8">
+                <Button variant="hero" size="lg" className="text-base px-8 bg-warm text-warm-foreground hover:bg-warm/90 border-none shadow-lg shadow-warm/20">
                   Get a Free Consultation
                   <ArrowRight className="h-5 w-5" />
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
-                <Button variant="outline" size="lg" className="text-base px-8">
+                <Button variant="outline" size="lg" className="text-base px-8 border-white/30 text-white hover:bg-white/10">
                   See Our Work
                 </Button>
               </motion.div>
             </motion.div>
           </div>
-
-          {/* Right side — logo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 1, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="hidden lg:flex items-center justify-center"
-          >
-            <div className="relative">
-              <motion.div
-                animate={{ scale: [1, 1.05, 1] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute inset-0 bg-primary/5 rounded-full blur-3xl scale-150"
-              />
-              <motion.img
-                whileHover={{ scale: 1.05, rotate: 2 }}
-                transition={{ type: "spring", stiffness: 200 }}
-                src={logo}
-                alt="Environments — Redesign, Restructure, Reconnect"
-                className="relative w-[420px] h-auto opacity-90"
-              />
-            </div>
-          </motion.div>
         </div>
       </div>
 
@@ -102,13 +92,13 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ChevronDown className="h-6 w-6 text-muted-foreground" />
+          <ChevronDown className="h-6 w-6 text-white/60" />
         </motion.div>
       </motion.div>
     </section>

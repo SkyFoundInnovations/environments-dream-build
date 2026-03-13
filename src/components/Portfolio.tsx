@@ -29,8 +29,12 @@ const Portfolio = () => {
   };
 
   return (
-    <section id="portfolio" className="py-24 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="portfolio" className="py-24 bg-section-dark relative overflow-hidden">
+      {/* Accent glows */}
+      <div className="absolute top-0 right-1/4 w-80 h-80 bg-warm/5 blur-[100px] rounded-full -translate-y-1/2" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/8 blur-[80px] rounded-full translate-y-1/3 -translate-x-1/3" />
+
+      <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -39,13 +43,13 @@ const Portfolio = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-2xl mb-16"
         >
-          <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">
+          <p className="text-sm uppercase tracking-widest text-warm font-medium mb-3">
             Our Work
           </p>
-          <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
+          <h2 className="font-display text-4xl md:text-5xl text-section-dark-foreground mb-6">
             Before & After
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed font-body">
+          <p className="text-lg text-section-dark-muted leading-relaxed font-body">
             Drag the slider to see the transformation. Every project is handled 
             with care, from structural changes to the final finishes.
           </p>
@@ -70,7 +74,7 @@ const Portfolio = () => {
                   beforeSrc={item.before}
                   afterSrc={item.after}
                 />
-                <h3 className="font-display text-lg text-foreground">{item.title}</h3>
+                <h3 className="font-display text-lg text-section-dark-foreground">{item.title}</h3>
               </motion.div>
             </motion.div>
           ))}

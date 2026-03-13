@@ -57,10 +57,19 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				construction: {
+			construction: {
 					green: 'hsl(var(--construction-green))',
 					dark: 'hsl(var(--construction-dark))',
 					light: 'hsl(var(--construction-light))'
+				},
+				warm: {
+					DEFAULT: 'hsl(var(--warm-accent))',
+					foreground: 'hsl(var(--warm-accent-foreground))'
+				},
+				'section-dark': {
+					DEFAULT: 'hsl(var(--section-dark))',
+					foreground: 'hsl(var(--section-dark-foreground))',
+					muted: 'hsl(var(--section-dark-muted))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
