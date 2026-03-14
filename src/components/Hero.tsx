@@ -59,8 +59,8 @@ const Hero = () => {
                 className="font-body text-lg md:text-xl text-section-dark-foreground/80 leading-relaxed max-w-lg"
               >
                 Environments is a business built on real experience — rooted in 
-                estimating, driven by a passion for design, and committed to doing 
-                every job with care and integrity.
+                integrity, driven by a passion for design, and committed to doing 
+                every job with care and craftsmanship.
               </motion.p>
             </div>
 
