@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback, useEffect } from "react";
+import { useState, useRef, useCallback } from "react";
 import { ImageIcon } from "lucide-react";
 
 interface BeforeAfterSliderProps {
