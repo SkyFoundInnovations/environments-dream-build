@@ -1,14 +1,27 @@
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import { motion } from "framer-motion";
 
+import kitchenBefore from "@/assets/portfolio/kitchen-before.jpg";
+import kitchenAfter from "@/assets/portfolio/kitchen-after.jpg";
+import bathroomBefore from "@/assets/portfolio/bathroom-before.jpg";
+import bathroomAfter from "@/assets/portfolio/bathroom-after.jpg";
+import livingBefore from "@/assets/portfolio/living-before.jpg";
+import livingAfter from "@/assets/portfolio/living-after.jpg";
+import basementBefore from "@/assets/portfolio/basement-before.jpg";
+import basementAfter from "@/assets/portfolio/basement-after.jpg";
+import exteriorBefore from "@/assets/portfolio/exterior-before.jpg";
+import exteriorAfter from "@/assets/portfolio/exterior-after.jpg";
+import masterBefore from "@/assets/portfolio/master-before.jpg";
+import masterAfter from "@/assets/portfolio/master-after.jpg";
+
 const Portfolio = () => {
   const comparisons = [
-    { id: 1, title: "Kitchen Remodel", before: null, after: null },
-    { id: 2, title: "Bathroom Renovation", before: null, after: null },
-    { id: 3, title: "Living Room Redesign", before: null, after: null },
-    { id: 4, title: "Basement Finishing", before: null, after: null },
-    { id: 5, title: "Exterior Update", before: null, after: null },
-    { id: 6, title: "Master Suite", before: null, after: null },
+    { id: 1, title: "Kitchen Remodel", before: kitchenBefore, after: kitchenAfter },
+    { id: 2, title: "Bathroom Renovation", before: bathroomBefore, after: bathroomAfter },
+    { id: 3, title: "Living Room Redesign", before: livingBefore, after: livingAfter },
+    { id: 4, title: "Basement Finishing", before: basementBefore, after: basementAfter },
+    { id: 5, title: "Exterior Update", before: exteriorBefore, after: exteriorAfter },
+    { id: 6, title: "Master Suite", before: masterBefore, after: masterAfter },
   ];
 
   const containerVariants = {
