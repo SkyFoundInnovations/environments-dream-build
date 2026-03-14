@@ -54,7 +54,7 @@ const About = () => {
                 to creating spaces that people love to live in.
               </p>
               <p>
-                With years of hands-on experience in construction estimating, 
+                With years of hands-on experience in construction, 
                 our team brings deep knowledge of project costs, materials, 
                 timelines, and execution. That expertise ensures every project 
                 is planned with precision — no surprises, no guesswork.
