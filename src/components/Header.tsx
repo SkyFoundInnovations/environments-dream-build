@@ -47,9 +47,11 @@ const Header = () => {
               <span><span>513 836 7134</span></span>
             </div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
-              <Button variant="default" size="default">
-                <Mail className="h-4 w-4" />
-                Free Consultation
+              <Button variant="default" size="default" asChild>
+                <a href="#contact">
+                  <Mail className="h-4 w-4" />
+                  Free Consultation
+                </a>
               </Button>
             </motion.div>
           </div>

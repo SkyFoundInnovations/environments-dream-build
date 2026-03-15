@@ -72,14 +72,16 @@ const Hero = () => {
               className="flex flex-col sm:flex-row gap-4"
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
-                <Button variant="hero" size="lg" className="text-base px-8 bg-warm text-warm-foreground hover:bg-warm/90 border-none shadow-lg shadow-warm/20">
-                  Get a Free Consultation
-                  <ArrowRight className="h-5 w-5" />
+                <Button variant="hero" size="lg" className="text-base px-8 bg-warm text-warm-foreground hover:bg-warm/90 border-none shadow-lg shadow-warm/20" asChild>
+                  <a href="#contact">
+                    Get a Free Consultation
+                    <ArrowRight className="h-5 w-5" />
+                  </a>
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
-                <Button variant="outline" size="lg" className="text-base px-8 border-white/30 text-white hover:bg-white/10 bg-transparent">
-                  See Our Work
+                <Button variant="outline" size="lg" className="text-base px-8 border-white/30 text-white hover:bg-white/10 bg-transparent" asChild>
+                  <a href="#portfolio">See Our Work</a>
                 </Button>
               </motion.div>
             </motion.div>
