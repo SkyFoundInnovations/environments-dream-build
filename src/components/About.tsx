@@ -71,8 +71,8 @@ const About = () => {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
-              <Button variant="hero" size="lg" className="bg-warm text-warm-foreground hover:bg-warm/90 shadow-lg shadow-warm/20">
-                Let's Talk About Your Project
+              <Button variant="hero" size="lg" className="bg-warm text-warm-foreground hover:bg-warm/90 shadow-lg shadow-warm/20" asChild>
+                <a href="#contact">Let's Talk About Your Project</a>
               </Button>
             </motion.div>
           </motion.div>
