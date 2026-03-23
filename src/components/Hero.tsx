@@ -15,7 +15,7 @@ const Hero = () => {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src={heroVideo} type="video/mp4" />
+          <source src={heroVideoAsset.url} type="video/mp4" />
         </video>
         {/* Dark overlay with green tint */}
         <div className="absolute inset-0 bg-gradient-to-r from-section-dark/95 via-section-dark/80 to-section-dark/50" />
