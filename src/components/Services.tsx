@@ -34,6 +34,12 @@ const Services = () => {
       description:
         "Good design isn't just about looks — it's about how a space feels. We help you choose materials, colors, and layouts that work together.",
     },
+    {
+      icon: Home,
+      title: "Basement Finishing",
+      description:
+        "Turn unused square footage into functional living space. From framing and insulation to flooring and lighting — we handle every detail.",
+    },
   ];
 
   const containerVariants = {
