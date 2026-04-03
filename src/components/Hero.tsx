@@ -16,8 +16,10 @@ const Hero = () => {
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
-        {/* Dark overlay with green tint */}
+        {/* Dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-section-dark/95 via-section-dark/80 to-section-dark/50" />
+        {/* Bottom edge bar to hide any watermark */}
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-section-dark to-transparent" />
         {/* Warm accent glow — bottom corner */}
         <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-warm/10 blur-[120px] rounded-full" />
       </div>
