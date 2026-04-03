@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
-import heroVideoAsset from "@/assets/hero-video.mp4.asset.json";
 
 const Hero = () => {
   return (
