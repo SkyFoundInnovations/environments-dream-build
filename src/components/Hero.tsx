@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
+import heroVideoAsset from "../../public/hero-video.mp4.asset.json";
 
 const Hero = () => {
   return (
@@ -8,13 +9,14 @@ const Hero = () => {
       {/* Fullscreen video background */}
       <div className="absolute inset-0 z-0">
         <video
+          key={heroVideoAsset.asset_id}
           autoPlay
           muted
           loop
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="/hero-video.mp4" type="video/mp4" />
+          <source src={`${heroVideoAsset.url}?v=${heroVideoAsset.asset_id}`} type="video/mp4" />
         </video>
         {/* Dark overlay with green tint */}
         <div className="absolute inset-0 bg-gradient-to-r from-section-dark/95 via-section-dark/80 to-section-dark/50" />
